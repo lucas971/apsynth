@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <filter id="Ellipse_945" x="-11.5" y="-8.5" width="87" height="87" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feFlood flood-opacity="0.239"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Picto_number_1">
+      <rect width="64" height="64"/>
+    </clipPath>
+  </defs>
+  <g id="Picto_number_1" data-name="Picto number 1" clip-path="url(#clip-Picto_number_1)">
+    <g id="Groupe_15743" data-name="Groupe 15743" transform="translate(2 2.038)">
+      <g transform="matrix(1, 0, 0, 1, -2, -2.04)" filter="url(#Ellipse_945)">
+        <ellipse id="Ellipse_945-2" data-name="Ellipse 945" cx="30" cy="30" rx="30" ry="30" transform="translate(2 2)" fill="#fff"/>
+      </g>
+      <path id="Tracé_81454" data-name="Tracé 81454" d="M-.058-14.877-3.045-12.7l-1.914-2.929,5.829-4.2H3.741V0h-3.8Z" transform="translate(30.959 39.797)"/>
+    </g>
+  </g>
+</svg>

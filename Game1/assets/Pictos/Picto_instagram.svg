@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="42" height="42" viewBox="0 0 42 42">
+  <defs>
+    <clipPath id="clip-Picto_instagram">
+      <rect width="42" height="42"/>
+    </clipPath>
+  </defs>
+  <g id="Picto_instagram" data-name="Picto instagram" clip-path="url(#clip-Picto_instagram)">
+    <g id="circle_insta" data-name="circle insta" transform="translate(-451 -353)">
+      <path id="BG_circle" data-name="BG circle" d="M20,0A20,20,0,1,1,0,20,20,20,0,0,1,20,0Z" transform="translate(452 354)" fill="#fff"/>
+      <g id="logo_insta" data-name="logo insta" transform="translate(2832.867 15624.666)">
+        <path id="Rectangle_35155" data-name="Rectangle 35155" d="M3.613,1.6A2.1,2.1,0,0,0,1.548,3.733v8.533A2.1,2.1,0,0,0,3.613,14.4h8.774a2.1,2.1,0,0,0,2.065-2.133V3.733A2.1,2.1,0,0,0,12.387,1.6H3.613m0-1.6h8.774A3.675,3.675,0,0,1,16,3.733v8.533A3.675,3.675,0,0,1,12.387,16H3.613A3.675,3.675,0,0,1,0,12.266V3.733A3.675,3.675,0,0,1,3.613,0Z" transform="translate(-2368.866 -15258.666)"/>
+        <path id="Ellipse_1357" data-name="Ellipse 1357" d="M4.2,1.574A2.624,2.624,0,1,0,6.822,4.2,2.627,2.627,0,0,0,4.2,1.574M4.2,0A4.2,4.2,0,1,1,0,4.2,4.2,4.2,0,0,1,4.2,0Z" transform="translate(-2364.866 -15254.666)"/>
+        <circle id="Ellipse_1358" data-name="Ellipse 1358" cx="0.908" cy="0.908" r="0.908" transform="translate(-2357.412 -15256.226)"/>
+      </g>
+    </g>
+  </g>
+</svg>
