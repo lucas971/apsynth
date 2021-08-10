@@ -206,9 +206,9 @@ const updateScoreText = () => {
   }
 
   for (let i = 0; i < toRemove.length; i++) {
-    const data = scoreTexts[i]
+    const data = scoreTexts[toRemove[i]]
     data.text.remove()
-    scoreTexts.splice(i, 1)
+    scoreTexts.splice(toRemove[i], 1)
   }
 }
 
