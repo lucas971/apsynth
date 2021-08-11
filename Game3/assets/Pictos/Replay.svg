@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-Replay">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="Replay" clip-path="url(#clip-Replay)">
+    <g id="Icons_Directions_ic-directions-round" data-name="Icons / Directions / ic-directions-round">
+      <rect id="Rectangle_213" data-name="Rectangle 213" width="24" height="24" fill="none"/>
+      <g id="ic-directions-round" transform="translate(3.222 2.905)">
+        <path id="Tracé_124" data-name="Tracé 124" d="M3.71,8.327a8.719,8.719,0,1,1,0,6.7" transform="translate(-3.671 -2.959)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" fill-rule="evenodd"/>
+        <path id="Tracé_125" data-name="Tracé 125" d="M3.67,4.58V8.261a.194.194,0,0,0,.194.194H7.545" transform="translate(-3.67 -3.01)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" fill-rule="evenodd"/>
+      </g>
+    </g>
+  </g>
+</svg>

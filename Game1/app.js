@@ -250,7 +250,7 @@ const updateScore = () => {
 
 //#endregion
 
-//#region  BOX EFFECT
+//#region BOX EFFECT
 const getRandomColor = () => {
   // Returns a random integer from 1 to 4:
   const random = Math.floor(Math.random() * 4) + 1
@@ -847,7 +847,7 @@ window.addEventListener('resize',
         camera.aspect = canvas.clientWidth/ canvas.clientHeight
         camera.updateProjectionMatrix()
         renderer.setSize(canvas.clientWidth, canvas.clientHeight)
-        render()
+        renderer.render(scene, camera)
     }, 
     false)
 

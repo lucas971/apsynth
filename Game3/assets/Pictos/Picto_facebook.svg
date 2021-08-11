@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="42" height="42" viewBox="0 0 42 42">
+  <defs>
+    <clipPath id="clip-Picto_facebook">
+      <rect width="42" height="42"/>
+    </clipPath>
+  </defs>
+  <g id="Picto_facebook" data-name="Picto facebook" clip-path="url(#clip-Picto_facebook)">
+    <g id="Facebook" transform="translate(-451 -296)">
+      <g id="Circle_facebbok" data-name="Circle facebbok">
+        <path id="BG_circle" data-name="BG circle" d="M20,0A20,20,0,1,1,0,20,20,20,0,0,1,20,0Z" transform="translate(452 297)" fill="#fff"/>
+        <g id="Composant_19" data-name="Composant 19" transform="translate(463.867 308.332)">
+          <rect id="Rectangle_392" data-name="Rectangle 392" width="16.268" height="16.268" transform="translate(0 0.065)" fill="none"/>
+          <path id="Tracé_1" data-name="Tracé 1" d="M85.535,16.333V8.893h2.541l.363-2.9h-2.9V4.174c0-.817.272-1.452,1.452-1.452H88.53V.091C88.167.091,87.259,0,86.261,0a3.5,3.5,0,0,0-3.72,3.811V5.989H80v2.9h2.541v7.441Z" transform="translate(-75.982)" fill-rule="evenodd"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

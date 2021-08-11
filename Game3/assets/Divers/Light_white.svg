@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="900" viewBox="0 0 900 900">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Light_white">
+      <rect width="900" height="900"/>
+    </clipPath>
+  </defs>
+  <g id="Light_white" data-name="Light white" clip-path="url(#clip-Light_white)">
+    <rect id="Rectangle_44940" data-name="Rectangle 44940" width="900" height="900" transform="translate(-0.313 0)" opacity="0.43" fill="url(#linear-gradient)"/>
+  </g>
+</svg>
