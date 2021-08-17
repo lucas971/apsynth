@@ -204,7 +204,6 @@ const SetupAnimations = () => {
       loader.load(
         robotWalkFile,
         (gltf2) => {
-          console.log("test")
           const animationAction = mixer.clipAction(gltf2.animations[0])
           animationActions.push(animationAction)
           walkAnimLoaded = true
