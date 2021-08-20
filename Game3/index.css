@@ -220,13 +220,13 @@ img {
     top: 5%;
     left: 10%;
 }
-
+/* 
 #welcomeOrdi {
     width: 70%;
     height: 50%;
     bottom: 20%;
     left: 15%;
-}
+} */
 
 #welcomeChrome {
     width: 60%;
@@ -408,7 +408,7 @@ img {
 
 #couponButton{
   font-family: GoogleSansRegular;
-  background: #4285f4;
+  background: #f5deb3aa;
   border-radius:5px;
   padding: 0.50rem 0.75rem;
   border:none;
