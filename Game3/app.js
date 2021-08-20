@@ -1,5 +1,5 @@
 //Mettre le code hexadecimal de la couleur du background ici
-const backgroundColor = 0xA8E3F1
+const backgroundColor = 0xf4b400
 
 //L'opacité du background (entre 0 et 1) : à 0, le background est complètement transparent.
 const backgroundOpacity = 1
