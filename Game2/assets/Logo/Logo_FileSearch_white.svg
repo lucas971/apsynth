@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="241" height="157" viewBox="0 0 241 157">
+  <defs>
+    <clipPath id="clip-Logo_FileSearch_white">
+      <rect width="241" height="157"/>
+    </clipPath>
+  </defs>
+  <g id="Logo_FileSearch_white" data-name="Logo FileSearch white" clip-path="url(#clip-Logo_FileSearch_white)">
+    <g id="Groupe_15483" data-name="Groupe 15483" transform="translate(583.215 18345)">
+      <text id="SEARCH" transform="translate(-543 -18230)" fill="#fff" font-size="40" font-family="GoogleSans-Bold, Google Sans" font-weight="700"><tspan x="0" y="0">SEARCH</tspan></text>
+      <text id="FILE" transform="translate(-543.43 -18269)" fill="#fff" font-size="47" font-family="GoogleSans-Bold, Google Sans" font-weight="700" letter-spacing="0.065em"><tspan x="0" y="0">FILE</tspan></text>
+      <path id="Tracé_81044" data-name="Tracé 81044" d="M33.217,38.646A5.049,5.049,0,0,0,38.265,33.6V0L0,38.646Z" transform="translate(-381.999 -18306.666) rotate(90)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

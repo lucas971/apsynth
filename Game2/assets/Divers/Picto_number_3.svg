@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <filter id="Ellipse_945" x="-11.5" y="-8.5" width="87" height="87" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feFlood flood-opacity="0.239"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Picto_number_3">
+      <rect width="64" height="64"/>
+    </clipPath>
+  </defs>
+  <g id="Picto_number_3" data-name="Picto number 3" clip-path="url(#clip-Picto_number_3)">
+    <g id="Groupe_15743" data-name="Groupe 15743" transform="translate(2 2.038)">
+      <g transform="matrix(1, 0, 0, 1, -2, -2.04)" filter="url(#Ellipse_945)">
+        <ellipse id="Ellipse_945-2" data-name="Ellipse 945" cx="30" cy="30" rx="30" ry="30" transform="translate(2 2)" fill="#fff"/>
+      </g>
+      <path id="Tracé_81452" data-name="Tracé 81452" d="M0,.464A7.633,7.633,0,0,1-4.451-.87,6.79,6.79,0,0,1-7.1-4.756l3.6-1.421a4.047,4.047,0,0,0,1.247,2.19A3.359,3.359,0,0,0,0-3.219a3.288,3.288,0,0,0,2.161-.754,2.375,2.375,0,0,0,.913-1.914A2.368,2.368,0,0,0,2.1-7.874a4.231,4.231,0,0,0-2.624-.74H-2.233v-3.451H-.667a3.6,3.6,0,0,0,2.16-.638,2.146,2.146,0,0,0,.885-1.856,2.068,2.068,0,0,0-.725-1.624A2.706,2.706,0,0,0-.2-16.82a2.792,2.792,0,0,0-1.914.638,3.387,3.387,0,0,0-1.015,1.6l-3.451-1.421a6.546,6.546,0,0,1,2.248-3.016A6.571,6.571,0,0,1-.174-20.3a7.643,7.643,0,0,1,3.321.7,5.538,5.538,0,0,1,2.276,1.9,4.737,4.737,0,0,1,.812,2.711A4.871,4.871,0,0,1,5.5-12.267a4.6,4.6,0,0,1-1.784,1.653v.232A5.228,5.228,0,0,1,6.061-8.555a5.019,5.019,0,0,1,.9,3.016,5.591,5.591,0,0,1-.87,3.074A5.976,5.976,0,0,1,3.64-.319,8.1,8.1,0,0,1,0,.464Z" transform="translate(30.106 40.261)"/>
+    </g>
+  </g>
+</svg>

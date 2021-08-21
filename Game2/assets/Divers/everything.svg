@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="181" height="79" viewBox="0 0 181 79">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.194" y1="0.764" x2="0.903" y2="0.146" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#57565e"/>
+      <stop offset="0.711" stop-color="#56555c" stop-opacity="0.961"/>
+      <stop offset="1" stop-color="#444" stop-opacity="0.388"/>
+    </linearGradient>
+    <filter id="Ellipse_2197">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.161" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="Ellipse_2199">
+      <feOffset dx="-1" dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur-2"/>
+      <feFlood flood-opacity="0.161" result="color-2"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color-2"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Everything_Button" data-name="Everything Button" transform="translate(0 -7.716)">
+    <rect id="Rectangle_44930" data-name="Rectangle 44930" width="181" height="79" rx="3" transform="translate(0 7.716)" fill="#57565e"/>
+    <rect id="Rectangle_44931" data-name="Rectangle 44931" width="175" height="75" rx="3" transform="translate(3 8.715)" fill="#d9dbe6"/>
+    <g id="Groupe_15707" data-name="Groupe 15707" transform="translate(18.505 34.439)">
+      <g data-type="innerShadowGroup">
+        <circle id="Ellipse_2197-2" data-name="Ellipse 2197" cx="12" cy="12" r="12" transform="translate(0.496 0.277)" fill="url(#linear-gradient)"/>
+        <g transform="matrix(1, 0, 0, 1, -18.5, -26.72)" filter="url(#Ellipse_2197)">
+          <circle id="Ellipse_2197-3" data-name="Ellipse 2197" cx="12" cy="12" r="12" transform="translate(19 27)" fill="#fff"/>
+        </g>
+      </g>
+      <circle id="Ellipse_2198" data-name="Ellipse 2198" cx="11" cy="11" r="11" transform="translate(1.496 1.277)" fill="#d9dbe6"/>
+      <g data-type="innerShadowGroup">
+        <circle id="Ellipse_2199-2" data-name="Ellipse 2199" cx="9" cy="9" r="9" transform="translate(3.496 3.277)" fill="#c3c5ce"/>
+        <g transform="matrix(1, 0, 0, 1, -18.5, -26.72)" filter="url(#Ellipse_2199)">
+          <circle id="Ellipse_2199-3" data-name="Ellipse 2199" cx="9" cy="9" r="9" transform="translate(22 30)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
