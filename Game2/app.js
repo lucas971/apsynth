@@ -14,6 +14,7 @@ let renderer
 let scene
 let camera
 let canvas
+let waitForPress
 
 // CLOCK
 let delta
@@ -62,12 +63,12 @@ let blackBallMat
 let red = 1
 let green = 2
 let blue = 3
-const throwingSpeed = 1
+const throwingSpeed = 2
 let folderSrcs
-let colorPoints
+const colorPoints = 200
 let folder
-let initialFolderBottom 
-let initialFolderLeft 
+const initialFolderBottom = 50
+const initialFolderLeft = 100
 const initialFolderWidth = 100
 const initialFolderHeight = 100
 let folderColor
@@ -157,11 +158,6 @@ const generateMaterials = () => {
   folderSrcs[red] = './assets/Folders/red.svg'
   folderSrcs[blue] = './assets/Folders/blue.svg'
   folderSrcs[green] = './assets/Folders/green.svg'
-
-  colorPoints = []
-  colorPoints[red] = 100
-  colorPoints[blue] = 200
-  colorPoints[green] = 300
 
   //  DIFFERENT COLOURS FOR THE BALLS
   redBallMat = new THREE.MeshPhongMaterial({
@@ -258,6 +254,7 @@ const generateScoreText = (text) => {
 // #endregion
 
 // #region BOX EFFECT
+
 const getRandomColor = () => {
   // Returns a random integer from 1 to 4:
   const random = Math.floor(Math.random() * 4) + 1
@@ -458,8 +455,8 @@ const createNewFolder = () => {
     }
   }
   folder.src = folderSrcs[randomColor]
-  folder.style.left = `${initialFolderLeft.toString()}px`
-  folder.style.bottom = `${initialFolderBottom.toString()}px`
+  folder.style.left = `${(startingPixelPos.x).toString()}px`
+  folder.style.bottom = `${(startingPixelPos.y).toString()}px`
   folder.style.width = `${initialFolderWidth.toString()}px`
   folder.style.height = `${initialFolderHeight.toString()}px`
   folderColor = randomColor
@@ -472,8 +469,8 @@ const createNewFolder = () => {
 const folderScored = () => {
   throwing = false
   if (folderColor === computerTarget) {
-    currentScore += colorPoints[folderColor]
-    generateScoreText(`+${colorPoints[folderColor]} points`)
+    currentScore += colorPoints
+    generateScoreText(`+${colorPoints} points`)
     playSound(sound1)
   } else if (computerTarget >= 0) {
     currentScore -= 100
@@ -487,7 +484,7 @@ const folderScored = () => {
 const initializeFolder = () => {
   folder = document.getElementById('folder')
   folder.style.display = 'inherit'
-  startingPixelPos = new THREE.Vector3(initialFolderLeft, initialFolderBottom, 0)
+  startingPixelPos = new THREE.Vector3(parentDiv.clientWidth / 2 - initialFolderWidth /2, initialFolderBottom, 0)
   currentPixelPos = startingPixelPos.clone()
   createNewFolder()
 }
@@ -579,7 +576,7 @@ const switchColors = () => {
   rightComputer.src = folderSrcs[randomColors[2]]
 
   if (currentTime > 5) {
-    setTimeout(switchColors, 5000)
+    setTimeout(switchColors, 3000)
   }
 }
 
@@ -614,6 +611,21 @@ const activateEverythingEffect = () => {
 
 // #region GAME STATE CHANGE
 
+const pressedScreen = () => {
+  if (!waitForPress) {
+    return
+  }
+  placed = true
+  clock.start()
+  document.getElementById('music').play()
+  initializeFolder()
+  initializeComputers()
+  setTimeout(switchColors, 3000)
+  setTimeout(showEverythingButton, 12000)
+  waitForPress = false
+  document.getElementById('play-text').style.display = 'none'
+}
+
 const gameStart = () => {
   if (!document.getElementById('AccepterCGU').checked) {
     return
@@ -624,6 +636,7 @@ const gameStart = () => {
   loseDiv.style.display = 'none'
   gameDiv = document.getElementById('gameDiv')
   gameDiv.style.display = 'flex'
+  document.getElementById('play-text').style.display = 'flex'
   scoreUi.innerText = ''
   timeUi.innerText = ''
   parentDiv.style.pointerEvents = 'none'
@@ -632,15 +645,7 @@ const gameStart = () => {
   everythingButtonInAction = false
   currentTime = GameTime
   currentScore = 0
-  placed = true
-  clock.start()
-  document.getElementById('music').play()
-  initialFolderLeft = parentDiv.clientWidth / 2 - initialComputerWidth / 2
-  initialFolderBottom = 200
-  initializeFolder()
-  initializeComputers()
-  setTimeout(switchColors, 5000)
-  setTimeout(showEverythingButton, 12000)
+  waitForPress = true
 }
 
 const winResult = () => {
@@ -709,6 +714,7 @@ const gameTutorial = () => {
   loseDiv = document.getElementById('loseDiv')
   document.getElementById('replayLose').addEventListener('click', gameStart, false)
   document.getElementById('shareLose').addEventListener('click', socialMediaShare, false)
+  document.addEventListener('keydown', pressedScreen)
 }
 
 const uspDisplay = () => {
@@ -765,11 +771,11 @@ const updateThrow = () => {
   }
 
   if (computerTarget === red) {
-    targetPixelPos.set(initialComputerLeft, topPos, 0)
+    targetPixelPos.set(initialComputerLeft, topPos - initialComputerHeight/2, 0)
   } else if (computerTarget === blue) {
-    targetPixelPos.set(rightPosx, topPos, 0)
+    targetPixelPos.set(rightPosx, topPos - initialComputerHeight/2, 0)
   } else {
-    targetPixelPos.set(middlePosx, topPos, 0)
+    targetPixelPos.set(middlePosx, topPos - initialComputerHeight/2, 0)
   }
 
   currentPixelPos.copy(targetPixelPos)
@@ -805,7 +811,6 @@ const updateTime = () => {
 // #endregion
 
 // #region START
-
 
 // INITIALIZATION
 
