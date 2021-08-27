@@ -1,230 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>SpeedBalls</title>
-    <link rel="stylesheet" href="index.css"> 
-    <meta property="og:url"                content="https://www.elkjop.no" />
-    <meta property="og:type"               content="game" />
-    <meta property="og:title"              content="Chromebook. Ready when you are." />
-    <meta property="og:description"        content="Try again to score more points and get the chance to win up to 70% discount on a new Chromebook!" />
-    <meta property="og:image"              content="https://stoic-mclean-765245.netlify.app/static/img/SpeedBalls.png" />
-  </head>
 
-  <body>
-    <img id="folder" src="assets/Folders/green.svg"/>
-    <img id="leftComputer" src="assets/Folders/red.svg"/>
-    <img id="rightComputer" src="assets/Folders/blue.svg"/>
-    <img id="middleComputer" src="assets/Folders/green.svg"/>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>SpeedBalls</title>
+  <link rel="stylesheet" href="index.css">
+  <meta property="og:url" content="https://www.elkjop.no" />
+  <meta property="og:type" content="game" />
+  <meta property="og:title" content="Chromebook. Ready when you are." />
+  <meta property="og:description"
+    content="Try again to score more points and get the chance to win up to 70% discount on a new Chromebook!" />
+  <meta property="og:image" content="https://stoic-mclean-765245.netlify.app/static/img/SpeedBalls.png" />
+</head>
 
-    <img id="everythingButton" src="assets/Divers/everything.svg"/>
+<body>
+  <img id="folder" src="assets/Folders/green.svg" />
+  <img id="leftComputer" src="assets/Folders/red.svg" />
+  <img id="rightComputer" src="assets/Folders/blue.svg" />
+  <img id="middleComputer" src="assets/Folders/green.svg" />
 
-    <audio id="music" loop>
-      <source src="assets/Sounds/music.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="audio1"> 
-      <source src="assets/Sounds/bip.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="audio1b"> 
-      <source src="assets/Sounds/bip.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="audio1c"> 
-      <source src="assets/Sounds/bip.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="audio1d"> 
-      <source src="assets/Sounds/bip.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="audio1e"> 
-      <source src="assets/Sounds/bip.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="audio2"> 
-      <source src="assets/Sounds/bling.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="audio2b"> 
-      <source src="assets/Sounds/bling.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="audio2c"> 
-      <source src="assets/Sounds/bling.mp3" type="audio/mpeg">
-    </audio>
-    <div id="parent" >
-      <div id="welcomeDiv" class="brick h-100">
-        <div class="container  flex flex-col items-center justify-between ">
-          <img id="welcomeSpeedball" src="assets/Logo/Logo_SpeedBall_white.svg"/>
-          <img id="welcomeOrdi" src="assets/Divers/Ordi_timer.svg" width="221" style="width:221px;max-width:100%"/>
-          <div class="logos flex justify-around">
-            <img id="tutorialChrome" src="assets/Logo/Logo_chromebook_white.png"/>
-            <img id="" src="assets/Logo/Elkjop_logo_white_pantone.png"/>
-          </div>
-        </div>
-      </div>
-      <div id="uspDiv" class="brick flex flex-col">
-        <div class="p-4 container">
-          <div id="tutorialChrome">
-            <div class="logos flex justify-around">
-              <img id="tutorialChrome" src="assets/Logo/Logo_chromebook_white.png"/>
-              <img id="" src="assets/Logo/Elkjop_logo_white_pantone.png"/>
-            </div>
-          </div>
-          <div id="tutorialTextContainer" class="flex flex-col items-center p-4">
-            <p class="tutorialTitle">Chromebook.</p>
-            <p class="tutorialTitle mb-6">Ready when you are.</p>
-            <p class="tutorialInstructions mb-4"> Start fast, booting up in seconds.</p>
-            <p class="tutorialInstructions mb-4"> Stay fast, with automatic updates in the background, you get the latest software without being interrupted.</p>
-    
-            <div class="my-4">
-              <button id="tutorialButton"> Next </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="tutorialDiv"  class="brick flex flex-col">
-        <div class="p-4 container flex flex-col items-center">
-          <div class="logos flex justify-around">
-            <img id="tutorialChrome" src="assets/Logo/Logo_chromebook_white.png"/>
-            <img id="" src="assets/Logo/Elkjop_logo_white_pantone.png"/>
-          </div>
-          <div id="tutorialTextContainer" class="flex flex-col items-center p-4">
-    
-            <p class="tutorialTitle"> How to play: </p>
-            <p class="tutorialInstructions mb-2">Catch as many Speed Balls as possible to score points.</p>
-            <p class="tutorialInstructions">Red = 100 points</p>
-            <p class="tutorialInstructions">Blue = 200 points</p>
-            <p class="tutorialInstructions">Green = 300 points</p>
-            <p class="tutorialInstructions" style="white-space: nowrap;">Yellow = 500 points</p>
-            <p class="tutorialInstructions">Catch the timers to win time.</p>
-            <p class="tutorialInstructions">Beware, the black balls will make you lose points.</p>
-            <div class="tutorialEnd my-2 text-center">
-              <input type="checkbox" id="AccepterCGU" name="AccepterCGU">
-              <label for="AccepterCGU">I accept the terms and conditions of the game</label>
-            </div>
-            <div class="my-4">
-                <button id="tutorialButton"> Next </button>
-              </div>
-          </div>
-        </div> 
-      </div>
-      <div id="gameDiv"  class="justify-between flex flex-col">
-        
-        <div id="time-div">
-          <p id="time-ui" class="score-text"></p>
-        </div>
-        
-        <div id="play-text" class="flex flex-col items-center">
-          <div>Press the spacebar to start</div>
-          <img src="assets/Pictos/pointer-touch.svg" width="75px">
-        </div>
+  <img id="everythingButton" src="assets/Divers/everything.svg" />
 
-        <div id="score-div">
-          <p id="score-ui" class="score-text"></p>
+  <audio id="music" loop>
+    <source src="assets/Sounds/music.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="audio1">
+    <source src="assets/Sounds/bip.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="audio1b">
+    <source src="assets/Sounds/bip.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="audio1c">
+    <source src="assets/Sounds/bip.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="audio1d">
+    <source src="assets/Sounds/bip.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="audio1e">
+    <source src="assets/Sounds/bip.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="audio2">
+    <source src="assets/Sounds/bling.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="audio2b">
+    <source src="assets/Sounds/bling.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="audio2c">
+    <source src="assets/Sounds/bling.mp3" type="audio/mpeg">
+  </audio>
+  <div id="parent">
+    <div id="welcomeDiv" class="brick h-100">
+      <div class="container  flex flex-col items-center justify-between ">
+        <img id="welcomeSpeedball" src="assets/Logo/Logo_FileSearch_white.svg" />
+        <img id="welcomeOrdi" src="assets/Divers/Ordi_files.png" width="221" style="width:221px;max-width:100%" />
+        <div class="logos flex justify-around">
+          <img id="tutorialChrome" src="assets/Logo/Logo_chromebook_white.png" />
+          <img id="" src="assets/Logo/Elkjop_logo_white_pantone.png" />
         </div>
       </div>
-      
-      <div id="endgameDiv"  class="brick flex flex-col">
-        <div class="p-4 container flex flex-col items-center">
+    </div>
+    <div id="uspDiv" class="brick flex flex-col">
+      <div class="p-4 container">
+        <div id="tutorialChrome">
           <div class="logos flex justify-around">
-            <img id="tutorialChrome" src="assets/Logo/Logo_chromebook_white.png"/>
-            <img id="" src="assets/Logo/Elkjop_logo_white_pantone.png"/>
-          </div>
-          <div id="endgameTitleContainer"  class="flex flex-col items-center p-4">
-            <p class="endgameTitle mb-4"> CONGRATULATION!</p>
-            <p class="endgameTitle"> You have scored:  </p>
-            <p class="endgameTitle" id="finalScore"> 10000 points </p>
-            <p class="endgameInstructions mb-10"> Try again to score more points and get the chance to win up 
-            to 70% discount on a new Chromebook!</p>
-            <button id="tutorialButton"> Check my discount </button>
+            <img id="tutorialChrome" src="assets/Logo/Logo_chromebook_white.png" />
+            <img id="" src="assets/Logo/Elkjop_logo_white_pantone.png" />
           </div>
         </div>
-      </div>
-    
-      <div id="spinDiv"  class="brick flex flex-col ">
-        <div class="p-4 container flex flex-col justify-between items-center">
-          <div class="logos flex justify-around">
-            <img id="tutorialChrome" src="assets/Logo/Logo_chromebook_white.png"/>
-            <img id="" src="assets/Logo/Elkjop_logo_white_pantone.png"/>
-          </div>
-          <div id="endgameTitleContainer" class="p-6">
-            <p class="endgameTitle"> Spin the wheel to check your discount! </p>
-          </div>
-          <img id="wheel" src="assets/Divers/wheel5.gif" >
-        </div>
-      </div>
-    
-      <div id="win10Div"  class="brick flex flex-col">
-        <div class="p-4 container flex flex-col items-center">
-          <div class="logos flex justify-around">
-            <img id="tutorialChrome" src="assets/Logo/Logo_chromebook_white.png"/>
-            <img id="" src="assets/Logo/Elkjop_logo_white_pantone.png"/>
-          </div>
-          <div id="endgameTitleContainer" class="p-6">
-            <p class="endgameTitle">YOU HAVE WON! </p>
-            <p class="endgameTitle"> Chromebook. Ready when you are.</p>
-          </div>
-          <div id="endgameCoupon" class="my-6 flex flex-col items-center p-4">
-            <div class="flex">
-              <div>
-                <img id="trophy" src="assets/Divers/Trophy.png"/>
-              </div>
-              <div class="flex flex-col" style="align-items: end;">
-                <p id="reduction"> 10 %</p>
-                <p id="reductionText"> Discount Code on<br/> new Chromebook</p>
-              </div>
-            </div>
-            <div class="flex flex-col endgameInstructions">
-              <div>10% = XXX points</div>
-              <div>20% = XXX points</div>
-              <div>70% = XXX points</div>
-            </div>
-            <div style="">
-              <a id="couponButton" href="#" class="my-2"> I take advantage of it</a>
-            </div>
-          </div>
-    
-          <div class="flex flex-col items-center">
-            <span id="replay" class="flex items-center mb-4 text-center">
-              <img id="replayIcon" src="assets/Pictos/Replay.svg"/>
-              <a id="replayButton" class="replayWin10"> Replay to get more </a>
-            </span>
-            <span id="share" class="flex items-center text-center">
-              <img id="shareIcon" src="assets/Pictos/Share.svg"/>
-              <a id="shareButton" class="shareWin10"> Share and challenge your friends </a>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div id="loseDiv"  class="brick flex flex-col">
-        <div class="p-4 container flex flex-col justify-around items-center">
-          <div class="logos flex justify-around">
-            <img id="tutorialChrome" src="assets/Logo/Logo_chromebook_white.png"/>
-            <img id="" src="assets/Logo/Elkjop_logo_white_pantone.png"/>
-          </div>
-          <div id="endgameTitleContainer" class="my-4 p-6">
-            <p class="endgameTitle"> SORRY,</p>
-            <p class="endgameTitle"> No Chromebook discount this time!</p>
-            <p class="endgameInstructions">Try again to score more points and get the chance to win a higher discount!</p>
-          </div>
-          <div class="flex flex-col my-6 endgameInstructions">
-            <div>10% = XXX points</div>
-            <div>20% = XXX points</div>
-            <div>70% = XXX points</div>
-          </div>
-          <div class="mb-4">
-            <button id="replayLose">Try again</button>
-          </div>
-          <div class="flex items-center">
-            <img id="" src="assets/Pictos/Share.svg"/>
-            <a id="shareLose" class="shareLose">Share and challenge your friends</a>
+        <div id="tutorialTextContainer" class="flex flex-col items-center p-4">
+          <p class="tutorialTitle">Chromebook.</p>
+          <p class="tutorialTitle mb-6">Upgrade to easy.</p>
+          <p class="tutorialInstructions mb-4">Chromebooks have The Everything  Button. It’s one button that helps you  find what you need fast. Like files.  And apps. And answers online. Press  it and get what you need — all from  one place</p>
+
+
+          <div class="my-4">
+            <button id="tutorialButton"> Next </button>
           </div>
         </div>
       </div>
     </div>
+    <div id="tutorialDiv" class="brick flex flex-col">
+      <div class="p-4 container flex flex-col items-center">
+        <div class="logos flex justify-around">
+          <img id="tutorialChrome" src="assets/Logo/Logo_chromebook_white.png" />
+          <img id="" src="assets/Logo/Elkjop_logo_white_pantone.png" />
+        </div>
+        <div id="tutorialTextContainer" class="flex flex-col items-center p-4">
 
-    <div id="threeJsCanvas"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js" integrity="sha512-yNJzAsg5JyP91u+sLHlUDULMBd3hmEiVkYeeN1cQBKaLZ7EyT6oH2u5THNIRM2Fu6VKcZJv+F/QAp1h/qzy9Ow==" crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
-    <script type="module" src="app.js"></script>
-  </body>
+          <p class="tutorialTitle"> How to play: </p>
+          <p class="tutorialInstructions mb-2">Using head movements, sort the files into
+            their matching computer color and avoid the
+            black screens, they will make you lose
+            points!</p>
+
+          <p class="tutorialInstructions">Look out for the everything button, when
+            clicked on it will sort out automatically the
+            files during 5 seconds!</p>
+          <div class="tutorialEnd my-2 text-center">
+            <input type="checkbox" id="AccepterCGU" name="AccepterCGU">
+            <label for="AccepterCGU">I accept the terms and conditions of the game</label>
+          </div>
+          <div class="my-4">
+            <button id="tutorialButton"> Next </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="gameDiv" class="justify-between flex flex-col">
+
+      <div id="time-div">
+        <p id="time-ui" class="score-text"></p>
+      </div>
+
+      <div id="play-text" class="flex flex-col items-center">
+        <div>Place your head at the center of the  screen and tap the screen to start.</div>
+        <img src="assets/Pictos/pointer-touch.svg" width="75px">
+      </div>
+
+      <div id="score-div">
+        <p id="score-ui" class="score-text"></p>
+      </div>
+    </div>
+
+    <div id="endgameDiv" class="brick flex flex-col">
+      <div class="p-4 container flex flex-col items-center">
+        <div class="logos flex justify-around">
+          <img id="tutorialChrome" src="assets/Logo/Logo_chromebook_white.png" />
+          <img id="" src="assets/Logo/Elkjop_logo_white_pantone.png" />
+        </div>
+        <div id="endgameTitleContainer" class="flex flex-col items-center p-4">
+          <p class="endgameTitle mb-4"> CONGRATULATION!</p>
+          <p class="endgameTitle"> You have scored: </p>
+          <p class="endgameTitle" id="finalScore"> 10000 points </p>
+          <p class="endgameInstructions mb-10"> Try again to score more points and get the chance to win up
+            to 70% discount on a new Chromebook!</p>
+          <button id="tutorialButton"> Check my discount </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="spinDiv" class="brick flex flex-col ">
+      <div class="p-4 container flex flex-col justify-between items-center">
+        <div class="logos flex justify-around">
+          <img id="tutorialChrome" src="assets/Logo/Logo_chromebook_white.png" />
+          <img id="" src="assets/Logo/Elkjop_logo_white_pantone.png" />
+        </div>
+        <div id="endgameTitleContainer" class="p-6">
+          <p class="endgameTitle"> Spin the wheel to check your discount! </p>
+        </div>
+        <img id="wheel" src="assets/Divers/wheel5.gif">
+      </div>
+    </div>
+
+    <div id="win10Div" class="brick flex flex-col">
+      <div class="p-4 container flex flex-col items-center">
+        <div class="logos flex justify-around">
+          <img id="tutorialChrome" src="assets/Logo/Logo_chromebook_white.png" />
+          <img id="" src="assets/Logo/Elkjop_logo_white_pantone.png" />
+        </div>
+        <div id="endgameTitleContainer" class="p-6">
+          <p class="endgameTitle">YOU HAVE WON! </p>
+          <p class="endgameTitle"> Chromebook. Ready when you are.</p>
+        </div>
+        <div id="endgameCoupon" class="my-6 flex flex-col items-center p-4">
+          <div class="flex">
+            <div>
+              <img id="trophy" src="assets/Divers/Trophy.png" />
+            </div>
+            <div class="flex flex-col" style="align-items: end;">
+              <p id="reduction"> 10 %</p>
+              <p id="reductionText"> Discount Code on<br /> new Chromebook</p>
+            </div>
+          </div>
+          <div class="flex flex-col endgameInstructions">
+            <div>10% = XXX points</div>
+            <div>20% = XXX points</div>
+            <div>70% = XXX points</div>
+          </div>
+          <div style="">
+            <a id="couponButton" href="#" class="my-2"> I take advantage of it</a>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <span id="replay" class="flex items-center mb-4 text-center">
+            <img id="replayIcon" src="assets/Pictos/Replay.svg" />
+            <a id="replayButton" href="javascript:" class="replayWin10"> Replay to get more </a>
+          </span>
+          <span id="share" class="flex items-center text-center">
+            <img id="shareIcon" src="assets/Pictos/Share.svg" />
+            <a id="shareButton" href="javascript:" class="shareWin10"> Share and challenge your friends </a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div id="loseDiv" class="brick flex flex-col">
+      <div class="p-4 container flex flex-col justify-around items-center">
+        <div class="logos flex justify-around">
+          <img id="tutorialChrome" src="assets/Logo/Logo_chromebook_white.png" />
+          <img id="" src="assets/Logo/Elkjop_logo_white_pantone.png" />
+        </div>
+        <div id="endgameTitleContainer" class="my-4 p-6">
+          <p class="endgameTitle"> SORRY,</p>
+          <p class="endgameTitle"> No Chromebook discount this time!</p>
+          <p class="endgameInstructions">Try again to score more points and get the chance to win a higher discount!</p>
+        </div>
+        <div class="flex flex-col my-6 endgameInstructions">
+          <div>10% = XXX points</div>
+          <div>20% = XXX points</div>
+          <div>70% = XXX points</div>
+        </div>
+        <div class="mb-4">
+          <button id="replayLose">Try again</button>
+        </div>
+        <div class="flex items-center">
+          <img id="" src="assets/Pictos/Share.svg" />
+          <a id="shareLose" class="shareLose">Share and challenge your friends</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="threeJsCanvas"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"
+    integrity="sha512-yNJzAsg5JyP91u+sLHlUDULMBd3hmEiVkYeeN1cQBKaLZ7EyT6oH2u5THNIRM2Fu6VKcZJv+F/QAp1h/qzy9Ow=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+
 </html>
-
-
-  

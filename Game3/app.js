@@ -55,7 +55,7 @@ const backgroundOpacity = 1
   let blackTimeout
 
   // ROBOT
-  const robotSpeed = -3000
+  const robotSpeed = -4000
 
   //  CSS
   let canvas
