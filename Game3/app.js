@@ -123,6 +123,7 @@ const initScene = () => {
   renderer.shadowMap.enabled = true
   renderer.shadowMap.type = THREE.PCFSoftShadowMap
   renderer.setClearColor( backgroundColor, backgroundOpacity);
+  renderer.setPixelRatio(2);
   canvas.appendChild(renderer.domElement)
   renderer.setSize(canvas.clientWidth, canvas.clientHeight)
 
