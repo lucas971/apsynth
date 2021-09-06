@@ -2,7 +2,7 @@
 const backgroundColor = 0xf4b400
 
 //L'opacité du background (entre 0 et 1) : à 0, le background est complètement transparent.
-const backgroundOpacity = 1
+const backgroundOpacity = 0
 
 //#region VARIABLES
 
@@ -123,8 +123,7 @@ const initScene = () => {
   canvas.addEventListener('mousedown', mouseHandler, true) // Add touch listener.
   document.addEventListener('keydown', keyboardInput, true)
   document.addEventListener('keyup', stopKeyboardInput, true)
-  renderer = new THREE.WebGLRenderer(canvas);
-  renderer.alpha = true
+  renderer = new THREE.WebGLRenderer({domElement:canvas, alpha:true});
   renderer.shadowMap.enabled = true
   renderer.shadowMap.type = THREE.PCFSoftShadowMap
   renderer.setClearColor( backgroundColor, backgroundOpacity);

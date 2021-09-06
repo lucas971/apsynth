@@ -186,7 +186,8 @@ img {
 #win10Div,
 #win70Div,
 #loseDiv,
-#threeJsCanvas{
+#threeJsCanvas,
+#backgroundImage{
   position:fixed;
   width:100%;
   height:100%;
@@ -194,11 +195,15 @@ img {
     
 }
 
+#backgroundImage{
+  z-index: 98;
+}
+
 #threeJsCanvas{
   position:fixed;
   width: 100%;
   height: 100%;
-  z-index:1
+  z-index:99
 }
 
 #uspDiv{
