@@ -6,6 +6,7 @@ const backgroundColor = 0x0843F1
 //L'opacité du background (entre 0 et 1) : à 0, le background est complètement transparent.
 const backgroundOpacity = 1
 
+let savedRotation
 const left = 1
 const up = 2
 const right = 3
@@ -21,7 +22,7 @@ let delta
 const clock = new THREE.Clock()
 
 // GAME PARAMETERS
-const GameTime = 25
+const GameTime = 40
 let currentTime
 let currentScore
 let placed
@@ -81,8 +82,8 @@ let computerTarget
 
 // Everything Button
 const everythingSpawnTime = 12
-const everythingScreenDuration = 3
-const everythingEffectDuration = 5
+const everythingScreenDuration = 2
+const everythingEffectDuration = 3
 let everythingButtonSpawned
 let everythingButton
 let everythingButtonInAction
@@ -429,6 +430,7 @@ const throwEverythingFolder = () => {
   throwProgress = 0.01
 }
 const throwFolder = (color) => {
+  savedRotation = color
   if (color === up) {
     computerTarget = green
   } else if (color === left) {
@@ -472,10 +474,28 @@ const folderScored = () => {
     currentScore += colorPoints
     generateScoreText(`+${colorPoints} points`)
     playSound(sound1)
+    if (savedRotation === up) {
+      sentUp(true)
+    }
+    else if (savedRotation === left) {
+      sentLeft(true)
+    }
+    else {
+      sentRight(true)
+    }
   } else if (computerTarget >= 0) {
     currentScore -= 100
     generateScoreText('-100 points')
     playSound(sound2)
+    if (savedRotation === up) {
+      sentUp(false)
+    }
+    else if (savedRotation === left) {
+      sentLeft(false)
+    }
+    else {
+      sentRight(false)
+    }
   }
 
   createNewFolder()
@@ -575,6 +595,8 @@ const switchColors = () => {
   middleComputer.src = folderSrcs[randomColors[1]]
   rightComputer.src = folderSrcs[randomColors[2]]
 
+  folderColorChanged()
+
   if (currentTime > 5) {
     setTimeout(switchColors, 3000)
   }
@@ -622,6 +644,7 @@ const pressedScreen = () => {
   initializeComputers()
   setTimeout(switchColors, 3000)
   setTimeout(showEverythingButton, 12000)
+  setTimeout(showEverythingButton, 25000)
   waitForPress = false
   document.getElementById('play-text').style.display = 'none'
 }
@@ -743,6 +766,30 @@ const uspDisplay = () => {
   sound2.push(document.getElementById('audio2b'))
   sound2.push(document.getElementById('audio2c'))
 }
+// #endregion
+
+// #region TRIGGERS
+
+//The folders swapped colors
+const folderColorChanged = () => {
+
+}
+
+//The file reached the top of the screen. If scored == true, that means the color match.
+const sentUp = (scored) => {
+
+}
+
+//The file reached the top right of the screen. If scored == true, that means the color match.
+const sentRight = (scored) => {
+
+}
+
+//The file reached the top left of the screen. If scored == true, that means the color match.
+const sentLeft = (scored) => {
+
+}
+
 // #endregion
 
 // #region UPDATE
