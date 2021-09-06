@@ -465,6 +465,7 @@ img {
 #folder,
 #leftComputer,
 #rightComputer,
+#bottomComputer,
 #middleComputer{
   display: none;
   position: absolute;

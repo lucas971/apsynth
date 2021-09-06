@@ -10,6 +10,7 @@ let savedRotation
 const left = 1
 const up = 2
 const right = 3
+const down = 4
 let currentRotation = 0
 let renderer
 let scene
@@ -64,18 +65,18 @@ let blackBallMat
 let red = 1
 let green = 2
 let blue = 3
+let yellow = 4
 const throwingSpeed = 2
 let folderSrcs
 const colorPoints = 200
 let folder
-const initialFolderBottom = 50
-const initialFolderLeft = 100
+const initialFolderPosRatio = new THREE.Vector3(0.5,0.5,0)
+let startingPixelPos
 const initialFolderWidth = 100
 const initialFolderHeight = 100
 let folderColor
 let throwing = false
 let throwProgress
-let startingPixelPos
 let currentPixelPos
 const targetPixelPos = new THREE.Vector3(0, 0, 0)
 let computerTarget
@@ -92,15 +93,19 @@ let everythingButtonInAction
 let middleComputer
 let rightComputer
 let leftComputer
+let downComputer
 let rightPosx
 let middlePosx
+let middlePosy
 let topPos
-
-const initialComputerTop = 150
-const initialComputerLeft = 50
 
 const initialComputerWidth = 100
 const initialComputerHeight = 100
+const topComputerPosRatio = new THREE.Vector3(0.5,0.8,0)
+const bottomComputerPosRatio = new THREE.Vector3(0.5,0.2,0)
+const rightComputerPosRatio = new THREE.Vector3(0.8,0.5,0)
+const leftComputerPosRatio = new THREE.Vector3(0.2,0.5,0)
+let computerPos =[]
 
 // #endregion
 
@@ -159,6 +164,7 @@ const generateMaterials = () => {
   folderSrcs[red] = './assets/Folders/red.svg'
   folderSrcs[blue] = './assets/Folders/blue.svg'
   folderSrcs[green] = './assets/Folders/green.svg'
+  folderSrcs[yellow] = './assets/Folders/yellow.svg'
 
   //  DIFFERENT COLOURS FOR THE BALLS
   redBallMat = new THREE.MeshPhongMaterial({
@@ -435,8 +441,10 @@ const throwFolder = (color) => {
     computerTarget = green
   } else if (color === left) {
     computerTarget = red
-  } else {
+  } else if (color === right){
     computerTarget = blue
+  } else {
+    computerTarget = yellow
   }
 
   throwing = true
@@ -446,13 +454,13 @@ const throwFolder = (color) => {
 
 const createNewFolder = () => {
   computerTarget = 0
-  let randomColor = 1 + Math.floor(Math.random() * 3)
-  if (randomColor === 4) {
-    randomColor = 3
+  let randomColor = 1 + Math.floor(Math.random() * 4)
+  if (randomColor === 5) {
+    randomColor = 4
   }
   if (randomColor === folderColor) {
     randomColor += 1
-    if (randomColor === 4) {
+    if (randomColor === 5) {
       randomColor = 1
     }
   }
@@ -480,8 +488,11 @@ const folderScored = () => {
     else if (savedRotation === left) {
       sentLeft(true)
     }
-    else {
+    else if (savedRotation === right){
       sentRight(true)
+    } 
+    else {
+      sentDown(true)
     }
   } else if (computerTarget >= 0) {
     currentScore -= 100
@@ -493,8 +504,11 @@ const folderScored = () => {
     else if (savedRotation === left) {
       sentLeft(false)
     }
-    else {
+    else if (savedRotation === right){
       sentRight(false)
+    } 
+    else {
+      sentDown(false)
     }
   }
 
@@ -504,37 +518,68 @@ const folderScored = () => {
 const initializeFolder = () => {
   folder = document.getElementById('folder')
   folder.style.display = 'inherit'
-  startingPixelPos = new THREE.Vector3(parentDiv.clientWidth / 2 - initialFolderWidth /2, initialFolderBottom, 0)
+  startingPixelPos = new THREE.Vector3(
+    parentDiv.clientWidth * initialFolderPosRatio.x - initialFolderWidth/2, 
+    parentDiv.clientHeight * initialFolderPosRatio.y - initialFolderHeight/2, 
+    0)
   currentPixelPos = startingPixelPos.clone()
   createNewFolder()
 }
 
-const initializeComputers = () => {
-  leftComputer = document.getElementById('leftComputer')
-  rightComputer = document.getElementById('rightComputer')
-  middleComputer = document.getElementById('middleComputer')
+const updateComputerPos = () => {
+  computerPos[up] = new THREE.Vector3(
+    parentDiv.clientWidth * topComputerPosRatio.x - initialComputerWidth/2,
+    parentDiv.clientHeight * topComputerPosRatio.y - initialComputerHeight/2,
+    0
+  )
+  computerPos[down] = new THREE.Vector3(
+    parentDiv.clientWidth * bottomComputerPosRatio.x - initialComputerWidth/2,
+    parentDiv.clientHeight * bottomComputerPosRatio.y - initialComputerHeight/2,
+    0
+  )
+  computerPos[right] = new THREE.Vector3(
+    parentDiv.clientWidth * rightComputerPosRatio.x - initialComputerWidth/2,
+    parentDiv.clientHeight * rightComputerPosRatio.y - initialComputerHeight/2,
+    0
+  )
+  computerPos[left] = new THREE.Vector3(
+    parentDiv.clientWidth * leftComputerPosRatio.x - initialComputerWidth/2,
+    parentDiv.clientHeight * leftComputerPosRatio.y - initialComputerHeight/2,
+    0
+  )
 
-  rightPosx = parentDiv.clientWidth - initialComputerLeft
-  middlePosx = parentDiv.clientWidth / 2 
-  topPos = parentDiv.clientHeight - initialComputerTop
-
-  leftComputer.style.left = `${(initialComputerLeft - initialComputerWidth / 2).toString()}px`
-  leftComputer.style.bottom = `${topPos.toString()}px`
+  leftComputer.style.left = `${computerPos[left].x.toString()}px`
+  leftComputer.style.bottom = `${computerPos[left].y.toString()}px`
   leftComputer.style.width = `${initialComputerWidth.toString()}px`
   leftComputer.style.height = `${initialComputerHeight.toString()}px`
   leftComputer.style.display = 'inherit'
 
-  rightComputer.style.left = `${(rightPosx - initialComputerWidth / 2).toString()}px`
-  rightComputer.style.bottom = `${topPos.toString()}px`
+  rightComputer.style.left = `${computerPos[right].x.toString()}px`
+  rightComputer.style.bottom = `${computerPos[right].y.toString()}px`
   rightComputer.style.width = `${initialComputerWidth.toString()}px`
   rightComputer.style.height = `${initialComputerHeight.toString()}px`
   rightComputer.style.display = 'inherit'
 
-  middleComputer.style.left = `${(middlePosx - initialComputerWidth / 2).toString()}px`
-  middleComputer.style.bottom = `${topPos.toString()}px`
+  middleComputer.style.left = `${computerPos[up].x.toString()}px`
+  middleComputer.style.bottom = `${computerPos[up].y.toString()}px`
   middleComputer.style.width = `${initialComputerWidth.toString()}px`
   middleComputer.style.height = `${initialComputerHeight.toString()}px`
   middleComputer.style.display = 'inherit'
+
+  downComputer.style.left = `${computerPos[down].x.toString()}px`
+  downComputer.style.bottom = `${computerPos[down].y.toString()}px`
+  downComputer.style.width = `${initialComputerWidth.toString()}px`
+  downComputer.style.height = `${initialComputerHeight.toString()}px`
+  downComputer.style.display = 'inherit'
+
+}
+const initializeComputers = () => {
+  leftComputer = document.getElementById('leftComputer')
+  rightComputer = document.getElementById('rightComputer')
+  middleComputer = document.getElementById('middleComputer')
+  downComputer = document.getElementById('bottomComputer')
+  
+  updateComputerPos()
 }
 const tryToLaunch = () => {
   if (placed && currentRotation !== 0 && computerTarget === 0) {
@@ -555,8 +600,8 @@ const keyboardInput = (e) => {
   else if (e.key === "ArrowUp") {
     currentRotation = up
   }
-  else {
-    return
+  else if (e.key === "ArrowDown"){
+    currentRotation = down
   }
 }
 
@@ -586,15 +631,16 @@ const switchColors = () => {
   if (!placed) {
     return
   }
-  let randomColors = [1, 2, 3]
+  let randomColors = [1, 2, 3, 4]
   randomColors = shuffle(randomColors)
   red = randomColors[0]
   green = randomColors[1]
   blue = randomColors[2]
+  yellow = randomColors[3]
   leftComputer.src = folderSrcs[randomColors[0]]
   middleComputer.src = folderSrcs[randomColors[1]]
   rightComputer.src = folderSrcs[randomColors[2]]
-
+  downComputer.src = folderSrcs[randomColors[3]]
   folderColorChanged()
 
   if (currentTime > 5) {
@@ -780,12 +826,17 @@ const sentUp = (scored) => {
 
 }
 
-//The file reached the top right of the screen. If scored == true, that means the color match.
+//The file reached the bottom of the screen. If scored == true, that means the color match.
+const sentDown = (scored) => {
+
+}
+
+//The file reached the right of the screen. If scored == true, that means the color match.
 const sentRight = (scored) => {
 
 }
 
-//The file reached the top left of the screen. If scored == true, that means the color match.
+//The file reached the left of the screen. If scored == true, that means the color match.
 const sentLeft = (scored) => {
 
 }
@@ -817,12 +868,14 @@ const updateThrow = () => {
     return
   }
 
-  if (computerTarget === red) {
-    targetPixelPos.set(initialComputerLeft, topPos - initialComputerHeight/2, 0)
-  } else if (computerTarget === blue) {
-    targetPixelPos.set(rightPosx, topPos - initialComputerHeight/2, 0)
+  if (computerTarget === blue) {
+    targetPixelPos.set(computerPos[right].x + initialComputerWidth/2, computerPos[right].y + initialComputerHeight/2, 0)
+  } else if (computerTarget === red) {
+    targetPixelPos.set(computerPos[left].x + initialComputerWidth/2, computerPos[left].y + initialComputerHeight/2, 0)
+  } else if (computerTarget === green) {
+    targetPixelPos.set(computerPos[up].x + initialComputerWidth/2, computerPos[up].y + initialComputerHeight/2, 0)
   } else {
-    targetPixelPos.set(middlePosx, topPos - initialComputerHeight/2, 0)
+    targetPixelPos.set(computerPos[down].x + initialComputerWidth/2, computerPos[down].y + initialComputerHeight/2, 0)
   }
 
   currentPixelPos.copy(targetPixelPos)
@@ -838,7 +891,7 @@ const updateThrow = () => {
 
   currentPixelPos.set(x, y, 0)
   folder.style.left = `${currentPixelPos.x.toString()}px`
-  folder.style.bottom = `${(currentPixelPos.y + 100).toString()}px`
+  folder.style.bottom = `${(currentPixelPos.y).toString()}px`
   folder.style.width = `${((1 - throwProgress) * initialFolderWidth).toString()}px`
   folder.style.height = `${((1 - throwProgress) * initialFolderHeight).toString()}px`
 }
