@@ -118,6 +118,7 @@ const initScene = () => {
   document.addEventListener('keydown', keyboardInput, true)
 
   renderer = new THREE.WebGLRenderer(canvas);
+  renderer.alpha = true
   renderer.shadowMap.enabled = true
   renderer.shadowMap.type = THREE.PCFSoftShadowMap
   renderer.setClearColor( backgroundColor, backgroundOpacity);

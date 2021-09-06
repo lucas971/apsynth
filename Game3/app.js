@@ -124,6 +124,7 @@ const initScene = () => {
   document.addEventListener('keydown', keyboardInput, true)
   document.addEventListener('keyup', stopKeyboardInput, true)
   renderer = new THREE.WebGLRenderer(canvas);
+  renderer.alpha = true
   renderer.shadowMap.enabled = true
   renderer.shadowMap.type = THREE.PCFSoftShadowMap
   renderer.setClearColor( backgroundColor, backgroundOpacity);

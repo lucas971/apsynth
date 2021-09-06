@@ -113,6 +113,7 @@ const initScene = () => {
   canvas.addEventListener('mousedown', mouseHandler, true) // Add touch listener.
 
   renderer = new THREE.WebGLRenderer(canvas);
+  renderer.alpha = true
   renderer.shadowMap.enabled = true
   renderer.shadowMap.type = THREE.PCFSoftShadowMap
   renderer.setClearColor( backgroundColor, backgroundOpacity);
