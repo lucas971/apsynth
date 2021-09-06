@@ -70,7 +70,7 @@ const throwingSpeed = 2
 let folderSrcs
 const colorPoints = 200
 let folder
-const initialFolderPosRatio = new THREE.Vector3(0.5,0.5,0)
+const initialFolderPosRatio = new THREE.Vector3(0.5,0.62,0)
 let startingPixelPos
 const initialFolderWidth = 100
 const initialFolderHeight = 100
@@ -86,7 +86,6 @@ const everythingSpawnTime = 12
 const everythingScreenDuration = 2
 const everythingEffectDuration = 3
 let everythingButtonSpawned
-let everythingButton
 let everythingButtonInAction
 
 // Computers
@@ -94,6 +93,9 @@ let middleComputer
 let rightComputer
 let leftComputer
 let downComputer
+let targetImage
+let computerNormal
+let computerEverything
 let rightPosx
 let middlePosx
 let middlePosy
@@ -101,10 +103,10 @@ let topPos
 
 const initialComputerWidth = 100
 const initialComputerHeight = 100
-const topComputerPosRatio = new THREE.Vector3(0.5,0.8,0)
-const bottomComputerPosRatio = new THREE.Vector3(0.5,0.2,0)
-const rightComputerPosRatio = new THREE.Vector3(0.8,0.5,0)
-const leftComputerPosRatio = new THREE.Vector3(0.2,0.5,0)
+const topComputerPosRatio = new THREE.Vector3(0.5,0.89,0)
+const bottomComputerPosRatio = new THREE.Vector3(0.5,0.37,0)
+const rightComputerPosRatio = new THREE.Vector3(0.75,0.62,0)
+const leftComputerPosRatio = new THREE.Vector3(0.25,0.62,0)
 let computerPos =[]
 
 // #endregion
@@ -117,8 +119,7 @@ const initScene = () => {
   canvas = document.getElementById("threeJsCanvas")
   document.addEventListener('keydown', keyboardInput, true)
 
-  renderer = new THREE.WebGLRenderer(canvas);
-  renderer.alpha = true
+  renderer = new THREE.WebGLRenderer({domElement:canvas, alpha:true});
   renderer.shadowMap.enabled = true
   renderer.shadowMap.type = THREE.PCFSoftShadowMap
   renderer.setClearColor( backgroundColor, backgroundOpacity);
@@ -524,6 +525,17 @@ const initializeFolder = () => {
     parentDiv.clientHeight * initialFolderPosRatio.y - initialFolderHeight/2, 
     0)
   currentPixelPos = startingPixelPos.clone()
+
+  targetImage = document.getElementById('target')
+  targetImage.style.display = 'inherit'
+  computerNormal = document.getElementById('computerNormal')
+  computerEverything = document.getElementById('computerEverything')
+  targetImage.style.left = `${(startingPixelPos.x - 6).toString()}px`
+  targetImage.style.bottom = `${(startingPixelPos.y - 8).toString()}px`
+  targetImage.style.width = `${(initialComputerWidth + 10).toString()}px`
+  targetImage.style.height = `${(initialComputerHeight+ 10).toString()}px`
+  targetImage.style.display = 'inherit'
+
   createNewFolder()
 }
 
@@ -572,14 +584,12 @@ const updateComputerPos = () => {
   downComputer.style.width = `${initialComputerWidth.toString()}px`
   downComputer.style.height = `${initialComputerHeight.toString()}px`
   downComputer.style.display = 'inherit'
-
 }
 const initializeComputers = () => {
   leftComputer = document.getElementById('leftComputer')
   rightComputer = document.getElementById('rightComputer')
   middleComputer = document.getElementById('middleComputer')
   downComputer = document.getElementById('bottomComputer')
-  
   updateComputerPos()
 }
 const tryToLaunch = () => {
@@ -603,6 +613,9 @@ const keyboardInput = (e) => {
   }
   else if (e.key === "ArrowDown"){
     currentRotation = down
+  }
+  else if (everythingButtonSpawned) {
+    activateEverythingEffect()
   }
 }
 
@@ -654,14 +667,19 @@ const switchColors = () => {
 // #region EVERYTHING BUTTON
 
 const hideEverythingButton = () => {
-  everythingButton.style.display = 'none'
-  everythingButton.style.pointerEvents = 'none'
+  computerEverything.style.display = 'none'
+  computerEverything.style.pointerEvents = 'none'
+  computerNormal.style.display = 'inherit'
+  computerNormal.style.pointerEvents = 'inherit'
+  everythingButtonSpawned = false
 }
 
 const showEverythingButton = () => {
   everythingButtonSpawned = true
-  everythingButton.style.display = 'inherit'
-  everythingButton.style.pointerEvents = 'inherit'
+  computerEverything.style.display = 'inherit'
+  computerEverything.style.pointerEvents = 'inherit'
+  computerNormal.style.display = 'none'
+  computerNormal.style.pointerEvents = 'none'
   setTimeout(hideEverythingButton, everythingScreenDuration * 1000)
 }
 
@@ -799,8 +817,6 @@ const uspDisplay = () => {
   spinDiv.style.pointerEvents = 'none'
   endgameDiv = document.getElementById('endgameDiv')
   endgameDiv.style.pointerEvents = 'none'
-  everythingButton = document.getElementById('everythingButton')
-  everythingButton.addEventListener('click', activateEverythingEffect)
 
   sound1 = []
   sound2 = []
@@ -931,7 +947,17 @@ const animate = () => {
   tryToLaunch()
   renderer.render(scene, camera)
 }
-
+window.addEventListener('resize', 
+    () => {
+      console.log("test")
+        camera.aspect = canvas.clientWidth/ canvas.clientHeight
+        camera.updateProjectionMatrix()
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight)
+        initializeFolder()
+        updateComputerPos()
+        renderer.render(scene, camera)
+    }, 
+    false)
 animate()
 
 // #endregion

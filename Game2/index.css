@@ -191,11 +191,29 @@ img {
 #win10Div,
 #win70Div,
 #loseDiv,
-#threeJsCanvas {
+#threeJsCanvas,
+#computerNormal,
+#computerEverything{
   position: fixed;
   width: 100%;
   height: 100%;
   z-index: 100;
+}
+
+#target{
+  position: absolute;
+  z-index: 99;
+  display: none;
+}
+#computerNormal{
+  top:30px;
+  z-index: 98;
+}
+
+#computerEverything{
+  top:30px;
+  z-index: 98;
+  display: none;
 }
 
 #threeJsCanvas {
