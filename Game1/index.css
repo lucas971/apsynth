@@ -199,6 +199,8 @@ img {
 }
 
 #threeJsCanvas {
+  background-image: url('assets/Divers/game-bg.png');
+
   position: fixed;
   width: 100%;
   height: 100%;

@@ -1,8 +1,8 @@
 //Mettre le code hexadecimal de la couleur du background ici
-const backgroundColor = 0x0843F1
+const backgroundColor = 0x000000
 
 //L'opacité du background (entre 0 et 1) : à 0, le background est complètement transparent.
-const backgroundOpacity = 1
+const backgroundOpacity = 0
 
 //#region VARIABLES
 let canvas
@@ -123,6 +123,7 @@ const initScene = () => {
   light.position.set(1, 4.3, 2.5) // default
 
   scene = new THREE.Scene()
+  scene.background = null;
 
   camera = new THREE.PerspectiveCamera(75, canvas.clientWidth/ canvas.clientHeight, 0.1, 1000)
   scene.add(camera)
