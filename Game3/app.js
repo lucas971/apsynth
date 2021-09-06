@@ -15,7 +15,10 @@ const backgroundOpacity = 1
   const batteryFile = './assets/Battery.glb'
   const timerFile = './assets/Timer.glb'
   let street
-  let timerModel
+  let timerModel1
+  let timerModel2
+  let timerModel3
+  let timerModel4
   let robot
   let robotForward
   const playerPosWorld = new THREE.Vector3()
@@ -31,16 +34,17 @@ const backgroundOpacity = 1
   let surface  // Transparent surface for raycasting for object placement.
   let gameStarted = false
   // TIMER
-  let timerTotal
-  let timerPos
-  let timerTimeout
+  let timerPos1
+  let timerPos2
+  let timerPos3
+  let timerPos4
 
   // CLOCK
   let delta
   const clock = new THREE.Clock()
 
   // GAME PARAMETERS
-  const GameTime = 25
+  const GameTime = 50
   let currentTime
   let currentScore
 
@@ -123,6 +127,7 @@ const initScene = () => {
   renderer.shadowMap.enabled = true
   renderer.shadowMap.type = THREE.PCFSoftShadowMap
   renderer.setClearColor( backgroundColor, backgroundOpacity);
+  renderer.setPixelRatio(2);
   canvas.appendChild(renderer.domElement)
   renderer.setSize(canvas.clientWidth, canvas.clientHeight)
 
@@ -529,7 +534,10 @@ const updateBatteries = () => {
   for (let i = 0; i < batteries.length; i++) {
     batteries[i].rotation.z += delta * 3
   }
-  timerModel.rotation.y += delta*2
+  timerModel1.rotation.y += delta*2
+  timerModel2.rotation.y += delta*2
+  timerModel3.rotation.y += delta*2
+  timerModel4.rotation.y += delta*2
 }
 
 const randomBatteryPoints = (index, black) => {
@@ -572,7 +580,7 @@ const randomBatteryPos = () => {
     if (random >= road.length) {
       random = road.length - 1
     }
-    if (timerPos === random) {
+    if (timerPos1 === random || timerPos2 === random || timerPos3 === random || timerPos4 === random) {
       random = -1
       continue
     }
@@ -617,10 +625,20 @@ const placeBatteries = () => {
     placeBattery(i, false)
   }
   blackTimeout = setTimeout(placeBlackBattery, 5000)
-  timerTimeout = setTimeout(nextTimer, 10000)
-  if (timerModel.parent) {
-    timerModel.parent.remove(timerModel)
+  if (timerModel1.parent) {
+    timerModel1.parent.remove(timerModel1)
   }
+  if (timerModel2.parent) {
+    timerModel2.parent.remove(timerModel2)
+  }
+  if (timerModel3.parent) {
+    timerModel3.parent.remove(timerModel3)
+  }
+  if (timerModel4.parent) {
+    timerModel4.parent.remove(timerModel4)
+  }
+
+  placeTimers()
 }
 
 const pickBattery = (index) => {
@@ -639,38 +657,58 @@ const pickBattery = (index) => {
   }
 }
 
-const nextTimer = () => {
-  if (timerModel.parent) {
-    timerModel.parent.remove(timerModel)
-  }
+const placeTimers = () => {
 
-  timerModel.rotation.y = Math.PI
+  timerModel1.rotation.y = Math.PI
+  timerModel2.rotation.y = Math.PI
+  timerModel3.rotation.y = Math.PI
+  timerModel4.rotation.y = Math.PI
 
-  if (timerTotal === 0) {
-    timerModel.children[0].children[0].material = redBallMat
-  } else if (timerTotal === 1) {
-    timerModel.children[0].children[0].material = blueBallMat
-  } else if (timerTotal === 2) {
-    timerModel.children[0].children[0].material = greenBallMat
-  } else {
-    timerModel.children[0].children[0].material = yellowBallMat
-  }
+  timerModel1.children[0].children[0].material = redBallMat
+  timerModel2.children[0].children[0].material = blueBallMat
+  timerModel3.children[0].children[0].material = greenBallMat
+  timerModel4.children[0].children[0].material = yellowBallMat
+  
+  timerPos1 = randomBatteryPos()
+  road[timerPos1].add(timerModel1)
+  timerModel1.position.set(0, 750, 0)
+  timerModel1.rotation.y = Math.PI
+  timerModel1.scale.set(6, 6, 6)
+  
+  timerPos2 = randomBatteryPos()
+  road[timerPos2].add(timerModel2)
+  timerModel2.position.set(0, 750, 0)
+  timerModel2.rotation.y = Math.PI
+  timerModel2.scale.set(6, 6, 6)
+  
+  timerPos3 = randomBatteryPos()
+  road[timerPos3].add(timerModel3)
+  timerModel3.position.set(0, 750, 0)
+  timerModel3.rotation.y = Math.PI
+  timerModel3.scale.set(6, 6, 6)
 
-  timerPos = randomBatteryPos()
-  road[timerPos].add(timerModel)
-  timerModel.position.set(0, 750, 0)
-  timerModel.rotation.y = Math.PI
-  timerModel.scale.set(6, 6, 6)
-  timerTotal++
+  timerPos4 = randomBatteryPos()
+  road[timerPos4].add(timerModel4)
+  timerModel4.position.set(0, 750, 0)
+  timerModel4.rotation.y = Math.PI
+  timerModel4.scale.set(6, 6, 6)
 }
 
-const pickTimer = () => {
-    timerModel.parent.remove(timerModel)
+const pickTimer = (number) => {
+  if (number === 1) {
+    timerModel1.parent.remove(timerModel1)
+  } else if (number === 2) {
+    timerModel2.parent.remove(timerModel2)
+  } else if (number === 3) {
+    timerModel3.parent.remove(timerModel3)
+  } else if (number === 4) {
+    timerModel4.parent.remove(timerModel4)
+  }
+    
     playSound(sound1)
     startBoxEffect(true, playerPosWorld)
     generateScoreText(`+10 seconds`)
     currentTime += 10
-    setTimeout(nextTimer, 1000)
 }
 
 const checkPickBatteries = () => {
@@ -684,14 +722,35 @@ const checkPickBatteries = () => {
         }
       }
     }
-    if (timerModel.parent) {
-        timerModel.getWorldPosition(batteryPosWorld)
+    if (timerModel1.parent) {
+        timerModel1.getWorldPosition(batteryPosWorld)
         if (playerPosWorld.distanceTo(batteryPosWorld) < pickingDistance) {
-            pickTimer()
+            pickTimer(1)
             return
         }
     }
-  }
+    if (timerModel2.parent) {
+      timerModel2.getWorldPosition(batteryPosWorld)
+      if (playerPosWorld.distanceTo(batteryPosWorld) < pickingDistance) {
+          pickTimer(2)
+          return
+      }
+    }
+    if (timerModel3.parent) {
+      timerModel3.getWorldPosition(batteryPosWorld)
+      if (playerPosWorld.distanceTo(batteryPosWorld) < pickingDistance) {
+        pickTimer(3)
+        return
+      }
+    }
+    if (timerModel4.parent) {
+      timerModel4.getWorldPosition(batteryPosWorld)
+      if (playerPosWorld.distanceTo(batteryPosWorld) < pickingDistance) {
+        pickTimer(4)
+        return
+        }
+      }
+    }
 // #endregion
 
 // #region GAME STATE CHANGE
@@ -713,7 +772,6 @@ const gameStart = () => {
   currentTime = GameTime
   currentScore = 0
   blackBatteries = 0
-  timerTotal = 0
   gameStarted = true
   idleAnim()
 }
@@ -743,7 +801,6 @@ const winResult = () => {
 const gameEnd = () => {
   placed = false
   clearTimeout(blackTimeout)
-  clearTimeout(timerTimeout)
   scene.remove(street)
   const sound = document.getElementById('music')
   sound.pause()
@@ -926,8 +983,11 @@ loader.load(
                 batteries[8] = batteries[0].clone()
                 SetupAnimations()
 
-                timerModel = gltf4.scene
-                timerModel.children[0].children[1].material = whiteBallMat
+                timerModel1 = gltf4.scene
+                timerModel1.children[0].children[1].material = whiteBallMat
+                timerModel2 = timerModel1.clone()
+                timerModel3 = timerModel1.clone()
+                timerModel4 = timerModel1.clone()
 
                 uspDisplay()
               })
