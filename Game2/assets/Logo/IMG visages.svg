@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="297.588" height="289.326" viewBox="0 0 297.588 289.326">
+  <defs>
+    <filter id="Union_28" x="112.072" y="1.846" width="68.79" height="12.172" filterUnits="userSpaceOnUse">
+      <feOffset dx="-2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Tracé_81054" x="110.959" y="7.052" width="6.388" height="5.466" filterUnits="userSpaceOnUse">
+      <feOffset dx="-2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur-2"/>
+      <feFlood flood-opacity="0.271"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Tracé_81050">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-3"/>
+      <feFlood flood-color="#fff" flood-opacity="0.11" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-3"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="Union_28-2" x="222.072" y="1.846" width="68.79" height="12.172" filterUnits="userSpaceOnUse">
+      <feOffset dx="-2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Tracé_81054-2" x="220.959" y="7.052" width="6.388" height="5.466" filterUnits="userSpaceOnUse">
+      <feOffset dx="-2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur-5"/>
+      <feFlood flood-opacity="0.271"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Tracé_81050-2">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-6"/>
+      <feFlood flood-color="#fff" flood-opacity="0.11" result="color-2"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-6"/>
+      <feComposite operator="in" in="color-2"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_48599" data-name="Rectangle 48599" width="168.215" height="154.049" transform="translate(0 0)" fill="#fff"/>
+    </clipPath>
+    <filter id="Union_28-3" x="1.146" y="1.956" width="69.608" height="12.252" filterUnits="userSpaceOnUse">
+      <feOffset dx="-2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur-7"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Tracé_81054-3" x="0" y="7.21" width="6.426" height="5.498" filterUnits="userSpaceOnUse">
+      <feOffset dx="-2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur-8"/>
+      <feFlood flood-opacity="0.271"/>
+      <feComposite operator="in" in2="blur-8"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Tracé_81050-3">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-9"/>
+      <feFlood flood-color="#fff" flood-opacity="0.11" result="color-3"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-9"/>
+      <feComposite operator="in" in="color-3"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="IMG_visages" data-name="IMG visages" transform="translate(-54.677 -301)">
+    <g id="Groupe_15747" data-name="Groupe 15747" transform="translate(166 301)">
+      <path id="Tracé_81049" data-name="Tracé 81049" d="M-18628.187-685.693l-2.051-51.931s-.789-4.314,3.705-4.5,25.578-.547,25.578-.547,2.979.061,2.979,3.828c.059.182-.184,4.131,3.705,3.888s30.318-1.4,30.318-1.4h2.43a2.9,2.9,0,0,1,2.672,1.7c0-.061-3.949,41.861-3.949,41.861Z" transform="translate(18630.291 742.667)" fill="#e3aa08"/>
+      <g transform="matrix(1, 0, 0, 1, -111.32, 0)" filter="url(#Union_28)">
+        <path id="Union_28-4" data-name="Union 28" d="M0,6.035v-3.1S49.758,1.205,58.781.02c.866-.045.684,0,.684,0V3.164H62.79v.82L0,6.172Z" transform="translate(117.07 4.85)" fill="#ddd"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -111.32, 0)" filter="url(#Tracé_81054)">
+        <path id="Tracé_81054-4" data-name="Tracé 81054" d="M2.807,0H0V2.369H2.807Z" transform="matrix(1, -0.03, 0.03, 1, 114.46, 8.65)" fill="#ddd"/>
+      </g>
+      <g data-type="innerShadowGroup">
+        <path id="Tracé_81050-4" data-name="Tracé 81050" d="M-18627.268-650.643l-2.066-43.379s.3-2.673,3.646-2.795,68.957-2.248,68.957-2.248,3.957-.436,3.645,3.463-3.828,37.182-3.828,37.182l-.426,1.4Z" transform="translate(18629.334 707.632)" fill="#f4b400"/>
+        <g transform="matrix(1, 0, 0, 1, -111.32, 0)" filter="url(#Tracé_81050)">
+          <path id="Tracé_81050-5" data-name="Tracé 81050" d="M-18627.268-650.643l-2.066-43.379s.3-2.673,3.646-2.795,68.957-2.248,68.957-2.248,3.957-.436,3.645,3.463-3.828,37.182-3.828,37.182l-.426,1.4Z" transform="translate(18740.66 707.63)" fill="#fff"/>
+        </g>
+      </g>
+      <path id="Tracé_81051" data-name="Tracé 81051" d="M-18617.312-468.257l70.381-6.577-.381,1.23-69.92,6.406Z" transform="translate(18619.314 524.197)" fill="rgba(0,0,0,0.34)" opacity="0.28"/>
+    </g>
+    <g id="Groupe_15746" data-name="Groupe 15746" transform="translate(276 301)">
+      <path id="Tracé_81049-2" data-name="Tracé 81049" d="M-18628.187-685.693l-2.051-51.931s-.789-4.314,3.705-4.5,25.578-.547,25.578-.547,2.979.061,2.979,3.828c.059.182-.184,4.131,3.705,3.888s30.318-1.4,30.318-1.4h2.43a2.9,2.9,0,0,1,2.672,1.7c0-.061-3.949,41.861-3.949,41.861Z" transform="translate(18630.291 742.667)" fill="#c72719"/>
+      <g transform="matrix(1, 0, 0, 1, -221.32, 0)" filter="url(#Union_28-2)">
+        <path id="Union_28-5" data-name="Union 28" d="M0,6.035v-3.1S49.758,1.205,58.781.02c.866-.045.684,0,.684,0V3.164H62.79v.82L0,6.172Z" transform="translate(227.07 4.85)" fill="#ddd"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -221.32, 0)" filter="url(#Tracé_81054-2)">
+        <path id="Tracé_81054-5" data-name="Tracé 81054" d="M2.807,0H0V2.369H2.807Z" transform="matrix(1, -0.03, 0.03, 1, 224.46, 8.65)" fill="#ddd"/>
+      </g>
+      <g data-type="innerShadowGroup">
+        <path id="Tracé_81050-6" data-name="Tracé 81050" d="M-18627.268-650.643l-2.066-43.379s.3-2.673,3.646-2.795,68.957-2.248,68.957-2.248,3.957-.436,3.645,3.463-3.828,37.182-3.828,37.182l-.426,1.4Z" transform="translate(18629.334 707.632)" fill="#db4437"/>
+        <g transform="matrix(1, 0, 0, 1, -221.32, 0)" filter="url(#Tracé_81050-2)">
+          <path id="Tracé_81050-7" data-name="Tracé 81050" d="M-18627.268-650.643l-2.066-43.379s.3-2.673,3.646-2.795,68.957-2.248,68.957-2.248,3.957-.436,3.645,3.463-3.828,37.182-3.828,37.182l-.426,1.4Z" transform="translate(18850.66 707.63)" fill="#fff"/>
+        </g>
+      </g>
+      <path id="Tracé_81051-2" data-name="Tracé 81051" d="M-18617.312-468.257l70.381-6.577-.381,1.23-69.92,6.406Z" transform="translate(18619.314 524.197)" fill="rgba(0,0,0,0.34)" opacity="0.28"/>
+    </g>
+    <ellipse id="Ellipse_2225" data-name="Ellipse 2225" cx="40.35" cy="40.35" rx="40.35" ry="40.35" transform="translate(163.5 352.984)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke-dasharray="3 4"/>
+    <ellipse id="Ellipse_2226" data-name="Ellipse 2226" cx="27.688" cy="27.687" rx="27.688" ry="27.687" transform="translate(176.5 325.297)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke-dasharray="3 4"/>
+    <ellipse id="Ellipse_2227" data-name="Ellipse 2227" cx="51.34" cy="51.34" rx="51.34" ry="51.34" transform="translate(152.5 404.416)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke-dasharray="3 4"/>
+    <g id="Groupe_de_masques_75" data-name="Groupe de masques 75" transform="translate(120 425.201)" clip-path="url(#clip-path)">
+      <path id="Tracé_81903" data-name="Tracé 81903" d="M94.69-18C69.283-18,58.167,3.12,58.167,24.557,58.167,52.664,75,65.368,75,74.737c0,3.652-2.541,8.257-9.528,11.91L28.313,106.337C15.292,113.483,21.8,140.8,21.8,140.8H167.419s6.352-27.313-6.669-34.459L123.591,86.488c-6.828-3.652-10-7.622-10-11.275,0-8.575,17.15-20.8,17.15-50.973C130.9-.85,117.557-18,94.69-18Z" transform="translate(-8.251 35.387)" fill="#e7e7e7"/>
+    </g>
+    <g id="Groupe_16531" data-name="Groupe 16531" transform="translate(122.291 426.867)">
+      <path id="Tracé_81868" data-name="Tracé 81868" d="M138.991,370.861H128.13V355.39" transform="translate(-128.13 -210.402)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="6"/>
+      <path id="Tracé_81869" data-name="Tracé 81869" d="M367.078,355.39v15.471h-10.7" transform="translate(-204.28 -210.402)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="6"/>
+      <path id="Tracé_81870" data-name="Tracé 81870" d="M356.38,89.984h10.7v14.732" transform="translate(-204.28 -89.984)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="6"/>
+      <path id="Tracé_81871" data-name="Tracé 81871" d="M128.13,105.1V89.984h10.861" transform="translate(-128.13 -89.984)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="6"/>
+    </g>
+    <g id="Groupe_16532" data-name="Groupe 16532" transform="translate(55 301.047)">
+      <path id="Tracé_81049-3" data-name="Tracé 81049" d="M-18628.162-684.952l-2.076-52.607s-.8-4.37,3.756-4.555,25.91-.554,25.91-.554,3.018.062,3.018,3.877c.059.185-.187,4.185,3.752,3.939s30.713-1.416,30.713-1.416h2.463a2.938,2.938,0,0,1,2.705,1.723c0-.062-4,42.405-4,42.405Z" transform="translate(18630.293 742.667)" fill="#3974c6"/>
+      <g transform="matrix(1, 0, 0, 1, -0.32, -0.05)" filter="url(#Union_28-3)">
+        <path id="Union_28-6" data-name="Union 28" d="M0,6.114V2.975S50.406,1.221,59.546.02c.877-.046.692,0,.692,0V3.206h3.37v.831L0,6.252Z" transform="translate(6.15 4.96)" fill="#ddd"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -0.32, -0.05)" filter="url(#Tracé_81054-3)">
+        <path id="Tracé_81054-6" data-name="Tracé 81054" d="M2.844,0H0V2.4H2.844Z" transform="matrix(1, -0.03, 0.03, 1, 3.5, 8.81)" fill="#ddd"/>
+      </g>
+      <g data-type="innerShadowGroup">
+        <path id="Tracé_81050-8" data-name="Tracé 81050" d="M-18627.24-650.013l-2.094-43.944s.307-2.708,3.693-2.831,69.855-2.277,69.855-2.277,4.01-.442,3.691,3.508-3.877,37.666-3.877,37.666l-.43,1.416Z" transform="translate(18629.334 707.743)" fill="#4285f4"/>
+        <g transform="matrix(1, 0, 0, 1, -0.32, -0.05)" filter="url(#Tracé_81050-3)">
+          <path id="Tracé_81050-9" data-name="Tracé 81050" d="M-18627.24-650.013l-2.094-43.944s.307-2.708,3.693-2.831,69.855-2.277,69.855-2.277,4.01-.442,3.691,3.508-3.877,37.666-3.877,37.666l-.43,1.416Z" transform="translate(18629.66 707.79)" fill="#fff"/>
+        </g>
+      </g>
+      <path id="Tracé_81051-3" data-name="Tracé 81051" d="M-18617.312-468.171l71.3-6.662-.385,1.246-70.83,6.489Z" transform="translate(18619.34 524.84)" fill="rgba(0,0,0,0.34)" opacity="0.28"/>
+    </g>
+  </g>
+</svg>
